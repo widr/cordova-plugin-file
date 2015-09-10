@@ -543,7 +543,7 @@ module.exports = {
             fail(FileError.ENCODING_ERR);
             return;
         }
-        if (!path || (new RegExp('/[^/]*/?$')).test(path)) {
+        if (!path || !(new RegExp('/[^/]*/?$')).test(path)) {
             win(new DirectoryEntry(fs.root.name, fs.root.fullPath, fs.name, fs.makeNativeURL(fs.root.fullPath)));
             return;
         }
